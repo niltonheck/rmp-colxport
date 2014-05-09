@@ -11,7 +11,7 @@ class bcolors:
     ENDC = '\033[0m'
 
 @cli.app.CommandLineApp
-def ls(app):
+def colxport(app):
   __page = 0
   __continue = True
   __records = 0
@@ -40,14 +40,14 @@ def ls(app):
 
   print "Success: " + str(__records) + " record(s) imported to local Mongo Database " + bcolors.OKGREEN + u'\u2713' + bcolors.ENDC
 
-ls.add_param('-u', '--user', help="e-mail of the runmyprocess account with privilegies", default=False, action="store", dest='username', required=True)
-ls.add_param('-p', '--pass', help="password of the runmyprocess account with privilegies", default=False, action="store", dest='password', required=True)
-ls.add_param('-c', '--customer', help="identifier of the customer (visible at the application url)", default=False, action="store", dest='customerid', required=True)
-ls.add_param('-cl', '--collection', help="name of the collection you wish to copy from the runmyprocess IDE", default=False, action="store", dest='collection', required=True)
-ls.add_param('-m', '--mode', help="mode of the environment desired, available options are: LIVE (default) or TEST", default='LIVE', action="store", dest="mode")
-ls.add_param('-lh', '--host', help="address of the local host database, usually it is 127.0.0.1 or localhost", default='LIVE', action="store", dest="local_host", required=True)
-ls.add_param('-ldb', '--local-database', help="name of the local database", default=False, action="store", dest="local_database", required=True)
-ls.add_param('-lc', '--local-collection', help="name of the collection you wish to be populated", default=False, action="store", dest="local_collection", required=True)
+colxport.add_param('-u', '--user', help="e-mail of the runmyprocess account with privilegies", default=False, action="store", dest='username', required=True)
+colxport.add_param('-p', '--pass', help="password of the runmyprocess account with privilegies", default=False, action="store", dest='password', required=True)
+colxport.add_param('-c', '--customer', help="identifier of the customer (visible at the application url)", default=False, action="store", dest='customerid', required=True)
+colxport.add_param('-cl', '--collection', help="name of the collection you wish to copy from the runmyprocess IDE", default=False, action="store", dest='collection', required=True)
+colxport.add_param('-m', '--mode', help="mode of the environment desired, available options are: LIVE (default) or TEST", default='LIVE', action="store", dest="mode")
+colxport.add_param('-lh', '--host', help="address of the local host database, usually it is 127.0.0.1 or localhost", default='LIVE', action="store", dest="local_host", required=True)
+colxport.add_param('-ldb', '--local-database', help="name of the local database", default=False, action="store", dest="local_database", required=True)
+colxport.add_param('-lc', '--local-collection', help="name of the collection you wish to be populated", default=False, action="store", dest="local_collection", required=True)
 
 if __name__ == "__main__":
-  ls.run()
+  colxport.run()
