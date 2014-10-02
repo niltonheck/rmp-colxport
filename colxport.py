@@ -31,7 +31,7 @@ def colxport(app):
     else:
       if len(r.json()) > 0:
         for item in r.json():
-          rutils.stablishCon('runmyprocess', 'acoes').insert(item)
+          rutils.stablishCon(app.params.local_database, app.params.local_collection).insert(item)
           __records = __records + 1
       else:
         __continue = False
